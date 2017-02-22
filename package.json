@@ -1,0 +1,41 @@
+{
+  "name": "react-boilerplate",
+  "description": "A boilerplate for react-redux applications",
+  "scripts": {
+    "test": "mocha  --require babel-polyfill --compilers js:babel-register --reporter spec src\\**\\*.spec.js",
+    "testw": "mocha  -w --require babel-polyfill --compilers js:babel-register --reporter spec src\\**\\*.spec.js",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "webpack --config configs/webpack.prod.config.js",
+    "watch": "webpack-dev-server --config configs/webpack.dev.config.js"
+  },
+  "author": "gugamm",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-register": "^6.23.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "enzyme": "^2.7.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "html-webpack-plugin": "^2.28.0",
+    "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.2",
+    "rimraf": "^2.6.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-merge": "^3.0.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0"
+  }
+}
