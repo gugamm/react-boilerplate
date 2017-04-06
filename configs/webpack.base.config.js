@@ -8,7 +8,7 @@ const vendors           = require('./user/vendors');
 
 const config = {
   entry : {
-    bundle : './src/index.js',
+    bundle : './src/index.jsx',
     vendor : vendors
   },
   output : {
@@ -20,7 +20,15 @@ const config = {
       {
         test : /\.jsx?$/,
         exclude : [/node_modules/, /\.spec\.js$/],
-        use : 'babel-loader'
+        use : [
+          'babel-loader',
+          {
+            loader : 'eslint-loader',
+            options : {
+              configFile : './configs/src-lint.js'
+            }
+          }
+        ]
       },
       {
         test : /\.css$/,
@@ -30,6 +38,9 @@ const config = {
         })
       }
     ]
+  },
+  resolve : {
+    extensions : ['.js', '.jsx']
   },
   plugins : [
     new HtmlWebpackPlugin({

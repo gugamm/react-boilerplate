@@ -1,7 +1,7 @@
-import React       from 'react';
-import { expect }  from 'chai';
+import React from 'react';
+import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import App         from './';
+import App from './';
 
 describe('<App />', function () {
   var app = shallow(<App />);
