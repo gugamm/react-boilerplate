@@ -18,19 +18,6 @@ const config = {
   module : {
     rules : [
       {
-        test : /\.jsx?$/,
-        exclude : [/node_modules/, /\.spec\.js$/],
-        use : [
-          'babel-loader',
-          {
-            loader : 'eslint-loader',
-            options : {
-              configFile : './configs/src-lint.js'
-            }
-          }
-        ]
-      },
-      {
         test : /\.css$/,
         use  : ExtractPlugin.extract({
           use : 'css-loader',
